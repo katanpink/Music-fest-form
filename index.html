@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="./musicnote.png">
+    <style>
+        body{
+            margin: 0px;
+        }
+        header, img{
+            width: 100%;
+        }
+        h1{
+            margin-top: 0px;
+            border-radius: 10px;
+            background-color:steelblue;
+            font-size: 45px;
+            text-align:center;
+            width:100%;
+        }
+        #form{
+            color:whitesmoke;
+            background-color: rgba(42, 106, 184, 0.648);
+            font-size: 20px;
+            justify-self: center;
+            margin-top: 15px;
+            margin-left: 25px;
+            padding: 25px;
+        }
+        #leg{
+            text-align:center;
+        }
+        fieldset{
+            border-color: steelblue;
+        }
+        .flexbox{
+            display:flex;
+            align-items: stretch;
+        }
+        .flextainer{
+            display:flex;
+            flex-direction: column;
+            align-items:stretch;
+        }
+        .card{
+            align-items: center;
+            width: 100px;
+            height: 50px;
+        }
+        .menu {
+            display: flex;
+            background-color: steelblue;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 5px;
+        }
+
+        .item {
+            margin-left: 40px;
+            text-align: center;
+            font-size: 28px;
+            color: white;
+            justify-content: left;
+
+        }
+
+        .item:hover {
+            background-color: rgba(42, 106, 184, 0.648);
+        }
+        textarea{
+            resize: none;
+        }
+        footer{
+            background-color: steelblue;
+            width:100%;
+            height:100px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./Untitled design (1).png">
+    </header>
+    <nav class="menu">
+        <div class="item">Home</div>
+        <div class="item">Artist</div>
+        <div class="item">Times</div>
+        <div class="item">Locations</div>
+        <div class="item">Buy</div>
+        <div class="item">Contact Us</div>
+    </nav>
+    <section class="flexbox">
+        <div style="flex-grow: 2">
+            <section class="flextainer">
+                <div style="flex-grow: 2">
+                    <form id="form">
+                        <fieldset>
+                            <legend id="leg">Tell Us About Yourself!</legend>
+                            <label for="lis">How much of a music listener are you(Between 0-100):</label>
+                            <input type="range" id="lis" name="lis" min="0" max="100"><br><br>
+                            <label for="pref">What's your favorite genre(s)</label><br><br>
+                            <input type="checkbox" id="rock" name="pref" value="rock">
+                            <label for="rock">Rock</label>
+                            <input type="checkbox" id="hip" name="pref" value="hip">
+                            <label for="hip">Hip Hop</label>
+                            <input type="checkbox" id="rock" name="R" value="R">
+                            <label for="R">R&B</label>
+                            <input type="checkbox" id="class" name="pref" value="class">
+                            <label for="class">Classical</label>
+                            <input type="checkbox" id="house" name="pref" value="house">
+                            <label for="house">House</label><br><br>
+                        </fieldset>
+                    </form>
+                </div>
+                <div style="flex-grow: 1">
+                    <form id="form">
+                        <h1>Contact form</h1>
+                        <fieldset>
+                            <legend id="leg">Fill this out so I can contact you further</legend>
+                            <!--Pulls their Name-->
+                            <label for="Name">Your Name:</label>
+                            <input type="text" required id="Name" name="Name" placeholder="Jacob Julia" pattern="[a-zA-Z]{2,}"><br><br>
+                            <!--Pulls their Age-->
+                            <label for="Age">Your Age:</label>
+                            <input type="number" required id="Age" name="Age" placeholder="27" pattern="[0-9]{2}"><br><br>
+                            <label for="ID">Picture of your ID:</label>
+                            <input type="file" required id="ID" name="ID"><br><br>
+                            <!--Sets the pass length-->
+                            <label for="pos">Position Preference:</label>
+                            <input list="select" id="pos" name="pos"><br><br>
+                            <datalist id="select">
+                                <option value="Front row"></option>
+                                <option value="Center row"></option>
+                                <option value="Backrow"></option>
+                                <option value="The Pit"></option>
+                                <option value="Vip (Elevated)"></option>
+                                <option value="Backstage"></option>
+                            </datalist>
+                            <!--important information-->
+                            <fieldset>
+                                <legend id="leg">Let us contact you</legend>
+                                <!--Pulls their Phone Number-->
+                                <label for="phone">Your Phone Number:</label>
+                                <input type="tel" id="phone" name="phone" placeholder="(xxx)-xxx-xxxx" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                                required><br><br> 
+                                <!--Pulls their Credit Card number-->
+                                <label for="CCN">Your Gmail:</label>
+                                <input type="email" required id="CCN" name="CCN" placeholder="loremipsum@gmail.com" pattern="[A-Za-z0-9_]{5,}"> 
+                            </fieldset><br>
+                            <!--Also Useless-->
+                            <label for="length">How long are you staying?</label><br>
+                            <input type="radio" id="single" name="length" value="single">
+                            <label for="single">1 Day</label><br>
+                            <input type="radio" required id="dos" name="length" value="dos">
+                            <label for="dos">2 Day</label><br>
+                            <input type="radio" id="whole" name="length" value="whole">
+                            <label for="whole">Whole Fest</label><br><br>
+                            <label for="rev">Please write a review of our services:</label><br>
+                            <textarea id="rev" name="rev" rows="6" cols="50"></textarea><br>
+                            <input type="submit" value="Submit" si> 
+                        </fieldset>
+                    </form>
+                </div>
+            </section>
+        </div>
+        <div style="flex-grow: 1">
+            <form id="form">
+                <h1>Billing Information</h1>
+                <fieldset>
+                    <legend id="leg">Required for ticket reservations</legend>
+                    <label for="prov">Chose your card provider</label><br><br>
+                    <input type="radio" id="visa" required name="prov" value="visa">
+                    <img src="./visa.png" for="visa" class="card">
+                    <input type="radio" id="master" name="prov" value="master">
+                    <img src="./mastercard.png" for="master" class="card">
+                    <input type="radio" id="disc" name="prov" value="disc">
+                    <img src="./discover.png" for="disc" class="card">
+                    <input type="radio" id="merica" name="prov" value="merica">
+                    <img src="./american.png" for="merics" class="card"><br><br>
+                    <label for="CCN">Your Card #:</label>
+                    <input type="text" required id="CCN" name="CCN" placeholder="xxxx xxxx xxxx xxxx" pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}"><br><br>
+                    <label for="exp">Experiation Date:</label>
+                    <input type="month" required id="exp" name="exp"><br><br>
+                    <label for="cvc">Security code:</label>
+                    <input type="number" required id="cvc" name="cvc" placeholder="777" pattern="[0-9]{3}"><br><br>
+                    <label for="adr">Address:</label>
+                    <input type="text" required id="adr" name="adr" placeholder="5249 jilepho rd" pattern="[0-9]{4,6} [A-Za-z]{3,}"><br><br>
+                    <label for="adr2">Address2:</label>
+                    <input type="text" id="adr2" name="adr2" pattern="[0-9]{4,6} [A-Za-z]{3,}"><br><br>
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" placeholder="Seattle" pattern="[A-Za-z]{2,}"><br><br>
+                    <label for="state">State:</label>
+                    <input type="text" id="state" name="state" placeholder="Alaska"  pattern="[A-Z]{2}"><br><br>
+                    <label for="zip">ZIP/Postal Code:</label>
+                    <input type="number" id="zip" name="zip" placeholder="123456" pattern="[0-9]{6}"><br><br>
+                    <label for="count">Country:</label>
+                    <input type="text" id="count" name="count" placeholder="Australia" pattern="[A-Za-z]{5,}"><br><br>
+                    <input type="submit" required value="Submit"> 
+                    <input type="reset" value="reset">
+                </fieldset>
+            </form>
+        </div>
+    </section>
+    <footer>
+
+    </footer>
+</body>
+</html>
